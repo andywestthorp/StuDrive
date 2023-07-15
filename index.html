@@ -1,0 +1,50 @@
+<head>
+  <meta charset="utf-8">
+  <title>Firebase Meetup</title>
+  <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/4.0.0/firebaseui.css" />
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700|Roboto:300,400,700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+<div id="app">
+  <img src="https://www.koolbadges.co.uk/images/thumbnails/learner-l-plate-hen-party-badge-400x400.jpg" />
+
+  <section id="event-details-container">
+       <h1>Stu's Driving School</h1>
+ 
+       <p><i class="material-icons">calendar_today</i> October 30</p>
+       <p><i class="material-icons">location_city</i> Gateshead</p>
+       <button id="startRsvp">Log In</button>
+  
+ </section>
+
+  <hr>
+
+  <section id="firebaseui-auth-container"></section>
+
+  <section id="description-container">
+      <h2>What we'll be doing</h2>
+      <p>Join us for a day full of Firebase Workshops and Pizza!</p>
+  </section>
+
+   <section id="guestbook-container">
+   <h2>Discussion</h2>
+
+   <form id="leave-message">
+     <label>Leave a message: </label>
+     <input type="text" id="message">
+     <button type="submit">
+       <i class="material-icons">send</i>
+       <span>Send</span>
+     </button>
+   </form>
+   
+   <section id="guestbook"></section>
+
+ </section>
+
+</div>
+</body>
+
