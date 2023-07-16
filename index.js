@@ -29,6 +29,7 @@ const guestbookContainer = document.getElementById('guestbook-container');
 const form = document.getElementById('leave-message');
 const input = document.getElementById('message');
 const guestbook = document.getElementById('guestbook');
+const description = document.getElementById('description-container');
 const numberAttending = document.getElementById('number-attending');
 const rsvpYes = document.getElementById('rsvp-yes');
 const rsvpNo = document.getElementById('rsvp-no');
@@ -101,11 +102,13 @@ const firebaseConfig = {
       startRsvpButton.textContent = 'LOGOUT';
       // Show guestbook to logged-in users
       guestbookContainer.style.display = 'block';
+      description.style.display = 'block';
       subscribeGuestbook();
     } else {
       startRsvpButton.textContent = 'RSVP';
       // Hide guestbook for non-logged-in users
       guestbookContainer.style.display = 'none';
+      description.style.display = 'none';
       unsubscribeGuestbook();
     }
   });
