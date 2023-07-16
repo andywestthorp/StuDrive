@@ -24,6 +24,8 @@ import * as firebaseui from 'firebaseui';
 
 // Document elements
 const startRsvpButton = document.getElementById('startRsvp');
+const displayToDoListButton = document.getElementById('toDoList');
+
 const guestbookContainer = document.getElementById('guestbook-container');
 
 const form = document.getElementById('leave-message');
@@ -85,6 +87,18 @@ const firebaseConfig = {
 
   const ui = new firebaseui.auth.AuthUI(getAuth());
 
+
+  // Listen to TO DO button clicks
+  displayToDoListButton.addEventListener('click', () => {
+    if (description.style.display === 'block') {
+      description.style.display = 'none';
+    } else {
+      description.style.display = 'block';
+    }
+  });
+
+
+
   // Listen to RSVP button clicks
   startRsvpButton.addEventListener('click', () => {
     if (auth.currentUser) {
@@ -102,13 +116,13 @@ const firebaseConfig = {
       startRsvpButton.textContent = 'LOGOUT';
       // Show guestbook to logged-in users
       guestbookContainer.style.display = 'block';
-      description.style.display = 'block';
+      
       subscribeGuestbook();
     } else {
       startRsvpButton.textContent = 'RSVP';
       // Hide guestbook for non-logged-in users
       guestbookContainer.style.display = 'none';
-      description.style.display = 'none';
+      
       unsubscribeGuestbook();
     }
   });
