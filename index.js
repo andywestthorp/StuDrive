@@ -32,6 +32,8 @@ const form = document.getElementById('leave-message');
 const input = document.getElementById('message');
 const guestbook = document.getElementById('guestbook');
 const description = document.getElementById('description-container');
+description.style.display = 'none';
+
 const numberAttending = document.getElementById('number-attending');
 const rsvpYes = document.getElementById('rsvp-yes');
 const rsvpNo = document.getElementById('rsvp-no');
@@ -119,7 +121,7 @@ const firebaseConfig = {
       
       subscribeGuestbook();
     } else {
-      startRsvpButton.textContent = 'RSVP';
+      startRsvpButton.textContent = 'LOG IN';
       // Hide guestbook for non-logged-in users
       guestbookContainer.style.display = 'none';
       
