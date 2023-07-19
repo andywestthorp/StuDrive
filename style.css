@@ -87,7 +87,7 @@
 
 /* Generating Color Pack*/
 .color-highlight {
-  color: #4A89DC !important;
+  color: #dd4b5a !important;
 }
 
 .bg-highlight {
@@ -4455,3 +4455,5 @@ input[type=range] {
   height: 100%;
   border: none;
 }
+
+

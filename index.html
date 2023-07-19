@@ -5,73 +5,159 @@
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, viewport-fit=cover" />
-<title>Stu's Driving School 2</title>
-<link rel="stylesheet" type="text/css" href="styles/bootstrap.css">
-<link rel="stylesheet" type="text/css" href="fonts/bootstrap-icons.css">
-<link rel="stylesheet" type="text/css" href="styles/style.css">
-<link rel="preconnect" href="https://fonts.gstatic.com">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;600;700;800&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <title>Stu's Driving App</title>  
+    <link rel="stylesheet" type="text/css" href="bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="bootstrap-icons.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;600;700;800&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+
+
 <link rel="manifest" href="_manifest.json">
 <meta id="theme-check" name="theme-color" content="#FFFFFF">
 <link rel="apple-touch-icon" sizes="180x180" href="app/icons/icon-192x192.png"></head>
 
-<body>
-<div id="app">
-  <img src="https://www.koolbadges.co.uk/images/thumbnails/learner-l-plate-hen-party-badge-400x400.jpg" width = 20%/>
 
-  <section id="event-details-container">
-       <h1>Stu's Driving School</h1>
- 
-       <button id="startRsvp">Log In</button>
-       <button id="toDoList">To Do</button>
+    
+  </head>
+  <body class="theme-light" onload="showSplash()"">
+
   
- </section>
-
-
-  <hr>
-
-  <section id="firebaseui-auth-container"></section>
-
-  <section id="description-container">
-      <h2>Work in progress:</h2>
-      <ol>
-        <li>Log in authorisation
-          <li>Look after pupil information (CRUD)
-            <li>Look after bookings
-              
-      </ol>
-
+  <section id="header">
+    <div class="header-bar header-fixed header-app header-bar-detached">
+      <a class="header-title color-theme font-13">
+        <img src="icons/icon-48x48.png"> Stuart's Driving School 
+      </a>
+      <a onclick="switchDarkMode()" class="show-on-theme-light" data-toggle-theme>
+        <i class="bi bi-moon-fill font-13"></i>
+      </a>
+      <a onclick="switchLightMode()" class="show-on-theme-dark" data-toggle-theme>
+        <i class="bi bi-lightbulb-fill color-yellow-dark font-13"></i>
+      </a>
+    </div>
   </section>
+ <!-- Page Content Goes Here-->
+    <div class="page-content header-clear-medium">
 
-   <section id="guestbook-container">
-   <h2>Discussion</h2>
+    
+    <section id="splashPage">
+        <div class="card card-style py-3">
+          <div class="content px-2 text-center">
+             <div class="content px-2 text-center">
+            <h1 class="mb-n1 font-12 color-highlight font-700 text-uppercase">Log in page...</h1>
+            <p class="mb-3"> <h1>Welcome to Stu's driving WebApp. </h1><br>Please, log in with your registered email address and password. </p>
+          </div>
+           <div id="not-log-in">
+            <form id="form">
+              
+                <input type="email" id="email" placeholder="email">
+                <input type="password" id="password" placeholder="password">
+                <input type="submit" value="Login">
+            </form>
+            </div>
+    
+            </div>
+          </div>
+        </div>
+    </section>
 
-   <form id="leave-message">
-     <label>Leave a message: </label>
-     <input type="text" id="message">
-     <button type="submit">
-       <i class="material-icons">send</i>
-       <span>Send</span>
-     </button>
-   </form>
-   
-   <section id="guestbook"></section>
-
- </section>
-
-
-
-	<!-- Footer Bar-->
-  <div id="footer-bar" class="footer-bar footer-bar-detached">
-   
-		  <a href="#"><i class="bi bi-heart-fill font-15"></i><span>Pages</span></a>
-      <a href="#"><i class="bi bi-star-fill font-17"></i><span>Features</span></a>
-      <a href="#" class="active-nav"><i class="bi bi-house-fill font-16"></i><span>Home</span></a>
-      <a href="#"><i class="bi bi-image font-16"></i><span>Media</span></a>
-      <a href="#" data-bs-toggle="offcanvas" data-bs-target="#menu-main"><i class="bi bi-list"></i><span>Menu</span></a>
+    <section id="footer">
+    <!-- Footer Bar-->
+    <div id="footer-bar" class="footer-bar footer-bar-detached">
+      <a id="pupilsMenu" onclick="showPupils()">
+        <i class="bi bi-people font-16"></i>
+        <span>Pupils</span>
+      </a>
+      <a id="scheduleMenu" onclick="showSchedule()">
+         <i class="bi bi-calendar-week font-16"></i>
+        <span>Schedule</span>
+      </a>
+      <a id="homeMenu" onclick="showHome()" class="active-nav">
+        <i class="bi bi-car-front-fill font-16"></i>
+        <span>Home</span>
+      </a>
+      <a id="financeMenu" onclick="showFinance()">
+        <i class="bi bi-currency-pound font-16"></i>
+        <span>Finance</span>
+      </a>
+      <a onclick="showMainMenu()" data-bs-toggle="offcanvas" data-bs-target="#menu-main">
+        <i class="bi bi-list"></i>
+        <span>Menu</span>
+      </a>
     </div>
 
-
+    </section>
+      <section id="pupils">
+<div class="bg-theme mx-3 rounded-m shadow-m mt-3 mb-3">
+	<div class="d-flex px-2 pb-2 pt-2">
+    
+            <h1 class="pb-2">Add 
+            <i class="bi bi-person-plus font-20"></i>
+&nbsp;
+              
+               <input type="text" id="pupilSearch" value=""  onchange ="findPupil()">
+        <i class="bi bi-search" onclick="findPupil()"></i>
+            </h1>
+  
+  </div>
 </div>
-</body>
 
+        
+<div class="bg-theme mx-3 rounded-m shadow-m mt-3 mb-3">
+	<div class="d-flex px-2 pb-2 pt-2">
+		<div>
+			<a href="#"><img src="Avatar-200.png" width="45" class="rounded-s" alt="img"></a>
+		</div>
+		<div class="ps-2 align-self-center">
+			<h5 class="ps-1 mb-0 line-height-xs pt-1">Lucy Westthorp</h5>
+			<h6 class="ps-1 mb-0 font-400 opacity-40">23 Treaty Park<br>Birgham<br>Coldstream<br>TD12 4NG<br></h6>
+			<h6 class="ps-1 mb-0 line-height-xs pt-1">07842737942</h6>
+		</div>
+		<div class="ms-auto">
+			<a href="#" data-bs-toggle="dropdown" class="icon icon-m ps-3"><i class="bi bi-three-dots-vertical font-18 color-theme"></i></a>
+		</div>
+	</div>
+</div>
+
+        
+      </section>
+      <section id="home">
+        <div class="card card-style py-3">
+          <div class="content px-2 text-center">
+            <h1 class="mb-n1 font-12 color-highlight font-700 text-uppercase">Important Information at a glance...</h1>
+            <p class="mb-3"> This page should show you important details, such as the next lesson, etc. </p>
+          </div>
+        </div>
+        
+      </section>
+  
+      <section id="schedule">
+        <div class="card card-style py-3">
+          <div class="content px-2 text-center">
+            <h1 class="mb-n1 font-12 color-highlight font-700 text-uppercase">Schedule</h1>
+            </h2>
+            <p class="mb-3"> Stuff </p>
+          </div>
+        </div>
+      </section>
+      <section id="finance">
+        <div class="card card-style">
+          <div class="content">
+            <h6 class="font-700 mb-n1 color-highlight">Financial Information</h6>
+            <h1 class="pb-2">How much money?...</h1>
+            <p> This could show a summary of income and expenditure, etc. </p>
+          </div>
+        </div>
+      </section>
+
+     
+    
+    </div>
+    <!-- End of Page Content-->
+
+      
+    </div>
+  </section>
+    <script src="firebase.js" type="module"></script>
+    <script src="script.js"></script>
+  </body>

@@ -1,7 +1,7 @@
 // To clear cache on devices, always increase APP_VER number after making changes.
 // The app will serve fresh content right away or after 2-3 refreshes (open / close)
-var APP_NAME = 'Duo';
-var APP_VER = '4.1';
+var APP_NAME = 'StuDrive';
+var APP_VER = '0.1';
 var CACHE_NAME = APP_NAME + '-' + APP_VER;
 
 // Files required to make this app work offline.
@@ -11,8 +11,8 @@ var REQUIRED_FILES = [
 	// HTML Files
 	'index.html',
 	// Styles
-	'styles/style.css',
-	'styles/bootstrap.css',
+	'style.css',
+	'bootstrap.css',
 	// Scripts
 	'scripts/custom.js',
 	'scripts/bootstrap.min.js',
