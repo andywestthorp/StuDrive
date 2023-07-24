@@ -23,7 +23,7 @@
   <body class="theme-light" onload="showSplash()"">
 
   
-  <section id="header">
+  <section id="header" visible=false>
     <div class="header-bar header-fixed header-app header-bar-detached">
       <a class="header-title color-theme font-13">
         <img src="icons/icon-48x48.png"> Stuart's Driving School 
@@ -36,14 +36,13 @@
       </a>
     </div>
   </section>
- <!-- Page Content Goes Here-->
-    <div class="page-content header-clear-medium">
-
-    
+ 
     <section id="splashPage">
+      <div class="page-content header-clear-medium">
         <div class="card card-style py-3">
           <div class="content px-2 text-center">
              <div class="content px-2 text-center">
+               <img src="icons/icon-192x192.png">
             <h1 class="mb-n1 font-12 color-highlight font-700 text-uppercase">Log in page...</h1>
             <p class="mb-3"> <h1>Welcome to Stu's driving WebApp. </h1><br>Please, log in with your registered email address and password. </p>
           </div>
@@ -61,7 +60,7 @@
         </div>
     </section>
 
-    <section id="footer">
+    <section id="footer" visible=false>
     <!-- Footer Bar-->
     <div id="footer-bar" class="footer-bar footer-bar-detached">
       <a id="pupilsMenu" onclick="showPupils()">
@@ -80,58 +79,538 @@
         <i class="bi bi-currency-pound font-16"></i>
         <span>Finance</span>
       </a>
-      <a onclick="showMainMenu()" data-bs-toggle="offcanvas" data-bs-target="#menu-main">
+      <a id="mainMenu" onclick="showMenu()" data-bs-toggle="offcanvas" data-bs-target="#menu-main">
         <i class="bi bi-list"></i>
         <span>Menu</span>
       </a>
     </div>
 
     </section>
-      <section id="pupils">
+<!-- Pupil Details -->
+<section id="pupils" visible=false>
+   <div class="header-bar header-fixed header-app header-bar-detached">
+      <a class="header-title color-theme font-13">
+        <img src="icons/icon-48x48.png"> Pupil Management 
+        <form class="find">
+      <label for="id">Find a pupil:</label>
+      <input type="text" name="findPupilName" id="findPupilName" required>
+      <button id="findPupilButton">Find</button>
+    </form>
+      </a>
+      <a onclick="switchDarkMode()" class="show-on-theme-light" data-toggle-theme>
+        <i class="bi bi-moon-fill font-13"></i>
+      </a>
+      <a onclick="switchLightMode()" class="show-on-theme-dark" data-toggle-theme>
+        <i class="bi bi-lightbulb-fill color-yellow-dark font-13"></i>
+      </a>
+
+     <div id="displayPupilForename">
+     </div>
+     <div id="displayPupilSurname">
+     </div>
+     
+    </div>
+<div class="page-content header-clear-medium">
+  
+  <br>
+ <div id="feeds">
+  </div>
+</div>
+
+      </section>
+
+
+<section id="pupilForm" visible=false>
+ <div class="header-bar header-fixed header-app header-bar-detached">
+      <a class="header-title color-theme font-13">
+       
+        <div id="learnerHeading">
+           <img src="icons/icon-48x48.png">
+  Lucy Westthorp      
+        </div>
+      </a>
+      <a onclick="switchDarkMode()" class="show-on-theme-light" data-toggle-theme>
+        <i class="bi bi-moon-fill font-13"></i>
+      </a>
+      <a onclick="switchLightMode()" class="show-on-theme-dark" data-toggle-theme>
+        <i class="bi bi-lightbulb-fill color-yellow-dark font-13"></i>
+      </a>
+ </div>
+  
+<div class="page-content header-clear-medium">
+
+  
 <div class="bg-theme mx-3 rounded-m shadow-m mt-3 mb-3">
-	<div class="d-flex px-2 pb-2 pt-2">
+
+<div class="d-flex px-2 pb-2 pt-2">
+  <div>
+    <a  ><img src="Avatar-200.png" width="45" class="rounded-s" alt="img"></a>
+  </div>
+  <div class="ps-2 align-self-center">
+    <h2 class="ps-1 mb-0 line-height-xs pt-1">
+
+     
+      <div id="pupilFormForeName">
+      First name
+    </div> 
+      
+      <br>
+     
+       <div id="pupilFormSurname">
+      Surname
+    </div>  
+<hr>
+    </h2><h5>
+       <div id="pupilFormAddr1">
+      Address Line 1
+    </div>  
+       <div id="pupilFormAddr2">
+      Address Line 2
+    </div>      
+       <div id="pupilFormTown">
+      Town
+    </div>      
+       <div id="pupilFormCity">
+      City
+    </div>  
+        <div id="pupilFormCounty">
+      County
+    </div>     
+       <div id="pupilFormPostcode">
+      Post Code
+    </div>  
+    <hr>
+      <div id="pupilFormTelephone">
+      Telephone
+    </div>   
+       <div id="pupilFormEmail">
+      email
+    </div>  
+      <div id="pupilFormDOB">
+      DOB
+    </div>  
+
+ <hr>
+       <div id="pupilFormLicense">
+      License 
+    </div>  
+    <div id="pupilFormStatus">
+      Learner Driver
+    </div> 
     
-            <h1 class="pb-2">Add 
-            <i class="bi bi-person-plus font-20"></i>
-&nbsp;
-              
-               <input type="text" id="pupilSearch" value=""  onchange ="findPupil()">
-        <i class="bi bi-search" onclick="findPupil()"></i>
+    
+    
+    </h3>
+
+ 
+
+    
+    </div>
+  
+</div>
+</div>
+
+<div class="bg-theme mx-3 rounded-m shadow-m mt-3 mb-3">
+
+<div class="d-flex px-2 pb-2 pt-2">
+    <div class="ps-2 align-self-center">
+    <h2 class="ps-1 mb-0 line-height-xs pt-1">
+Lesson History<hr>
+    </h2>
+      
+  <div id="pupilFormLessonHistory">
+    <table>
+      <thead>
+        <th>Date</th>
+        <th>Lesson</th>
+        <th>Paid</th>
+      </thead>
+      <hr>
+      <tbody>
+        <tr>
+          <td>
+            1/4/2023
+          </td>
+          <td>
+            Starting and moving off
+          </td>
+          <td>
+            £30
+          </td>
+        </tr>
+        <tr>
+          <td>
+            7/4/2023
+          </td>
+          <td>
+            Stopping
+          </td>
+          <td>
+            £30
+          </td>
+        </tr>
+        <tr>
+          <td>
+            14/4/2023
+          </td>
+          <td>
+            Eating crisps
+          </td>
+          <td>
+            £30
+          </td>
+        </tr>
+        <tr>
+          <td>
+            21/4/2023
+          </td>
+          <td>
+            Drinking beer
+          </td>
+          <td>
+            £30
+          </td>
+        </tr>
+        <tr>
+          <td>
+            28/4/2023
+          </td>
+          <td>
+            Listening to the radio
+          </td>
+          <td>
+            £30
+          </td>
+        </tr>
+        <tr>
+          <td>
+            1/5/2023
+          </td>
+          <td>
+            Changing a tyre
+          </td>
+          <td>
+            £30
+          </td>
+        </tr>
+        <tr>
+          <td>
+            1/4/2023
+          </td>
+          <td>
+            Starting and moving off
+          </td>
+          <td>
+            £30
+          </td>
+        </tr>
+        <tr>
+          <td>
+            1/4/2023
+          </td>
+          <td>
+            Starting and moving off
+          </td>
+          <td>
+            £30
+          </td>
+        </tr>
+        <tr>
+          <td>
+            1/4/2023
+          </td>
+          <td>
+            Starting and moving off
+          </td>
+          <td>
+            £30
+          </td>
+        </tr>
+        <tr>
+          <td>
+            1/4/2023
+          </td>
+          <td>
+            Starting and moving off
+          </td>
+          <td>
+            £30
+          </td>
+        </tr>
+        <tr>
+          <td>
+            1/4/2023
+          </td>
+          <td>
+            Starting and moving off
+          </td>
+          <td>
+            £30
+          </td>
+        </tr>
+        <tr>
+          <td>
+            1/4/2023
+          </td>
+          <td>
+            Starting and moving off
+          </td>
+          <td>
+            £30
+          </td>
+        </tr>
+        <tr>
+          <td>
+            1/4/2023
+          </td>
+          <td>
+            Starting and moving off
+          </td>
+          <td>
+            £30
+          </td>
+        </tr>
+        <tr>
+          <td>
+            1/4/2023
+          </td>
+          <td>
+            Starting and moving off
+          </td>
+          <td>
+            £30
+          </td>
+        </tr>
+        <tr>
+          <td>
+            1/4/2023
+          </td>
+          <td>
+            Starting and moving off
+          </td>
+          <td>
+            £30
+          </td>
+        </tr>
+        <tr>
+          <td>
+            1/4/2023
+          </td>
+          <td>
+            Starting and moving off
+          </td>
+          <td>
+            £30
+          </td>
+        </tr>
+        <tr>
+          <td>
+            1/4/2023
+          </td>
+          <td>
+            Starting and moving off
+          </td>
+          <td>
+            £30
+          </td>
+        </tr>
+        <tr>
+          <td>
+            1/4/2023
+          </td>
+          <td>
+            Starting and moving off
+          </td>
+          <td>
+            £30
+          </td>
+        </tr>
+        <tr>
+          <td>
+            1/4/2023
+          </td>
+          <td>
+            Starting and moving off
+          </td>
+          <td>
+            £30
+          </td>
+        </tr>
+        <tr>
+          <td>
+            1/4/2023
+          </td>
+          <td>
+            Starting and moving off
+          </td>
+          <td>
+            £30
+          </td>
+        </tr>
+        <tr>
+          <td>
+            1/4/2023
+          </td>
+          <td>
+            Starting and moving off
+          </td>
+          <td>
+            £30
+          </td>
+        </tr>
+        <tr>
+          <td>
+            1/4/2023
+          </td>
+          <td>
+            Starting and moving off
+          </td>
+          <td>
+            £30
+          </td>
+        </tr>
+        <tr>
+          <td>
+            1/4/2023
+          </td>
+          <td>
+            Starting and moving off
+          </td>
+          <td>
+            £30
+          </td>
+        </tr>
+        <tr>
+          <td>
+            1/4/2023
+          </td>
+          <td>
+            Starting and moving off
+          </td>
+          <td>
+            £30
+          </td>
+        </tr>
+        <tr>
+          <td>
+            1/4/2023
+          </td>
+          <td>
+            Starting and moving off
+          </td>
+          <td>
+            £30
+          </td>
+        </tr>
+        <tr>
+          <td>
+            1/4/2023
+          </td>
+          <td>
+            Starting and moving off
+          </td>
+          <td>
+            £30
+          </td>
+        </tr>
+        <tr>
+          <td>
+            1/4/2023
+          </td>
+          <td>
+            Starting and moving off
+          </td>
+          <td>
+            £30
+          </td>
+        </tr>
+        <tr>
+          <td>
+            1/4/2023
+          </td>
+          <td>
+            Starting and moving off
+          </td>
+          <td>
+            £30
+          </td>
+        </tr>
+      </tbody>
+    
+    
+    </table>  
+   <hr>
+    
+    Book New Lesson?
+    
+    </div>  
+  
+</div>
+</div>
+</div>
+</section>
+  <!--
+<div class="bg-theme mx-3 rounded-m shadow-m mt-3 mb-3">
+	<br>
+    <form class="add">
+      <label for="fornameLabel">Forename:</label>
+      <input type="text" name="foreName" required>
+      <label for="surnameLabel">Surname:</label>
+      <input type="text" name="surName" required>
+
+      <button>Add new person</button>
+    </form>
+<br>
+    <hr>
+    <br>
+
+    <form class="delete">
+      <label for="id">Document id:</label>
+      <input type="text" name="id" required>
+      
+      <button>Delete pupil record</button>
+    </form>
+    <br>
+
+      <hr>
+    <br>
+
+    <form class="update">
+      <label for="id">Document id:</label>
+      <input type="text" name="id" required>
+      
+      <button>Update pupil record</button>
+    </form>
+    <br>
+
+  <div class="d-flex px-2 pb-2 pt-2">
+
+  <h1 class="pb-2">
+      <input type="text" id="findPupilName" value=""  ">
+        <button id="findPupilButton">Find</button>
             </h1>
   
   </div>
 </div>
 
-        
-<div class="bg-theme mx-3 rounded-m shadow-m mt-3 mb-3">
-	<div class="d-flex px-2 pb-2 pt-2">
-		<div>
-			<a href="#"><img src="Avatar-200.png" width="45" class="rounded-s" alt="img"></a>
-		</div>
-		<div class="ps-2 align-self-center">
-			<h5 class="ps-1 mb-0 line-height-xs pt-1">Lucy Westthorp</h5>
-			<h6 class="ps-1 mb-0 font-400 opacity-40">23 Treaty Park<br>Birgham<br>Coldstream<br>TD12 4NG<br></h6>
-			<h6 class="ps-1 mb-0 line-height-xs pt-1">07842737942</h6>
-		</div>
-		<div class="ms-auto">
-			<a href="#" data-bs-toggle="dropdown" class="icon icon-m ps-3"><i class="bi bi-three-dots-vertical font-18 color-theme"></i></a>
-		</div>
-	</div>
-</div>
+  -->
 
-        
-      </section>
-      <section id="home">
+    
+      <section id="home" visible=false>
+        <div class="page-content header-clear-medium">
+  
         <div class="card card-style py-3">
           <div class="content px-2 text-center">
             <h1 class="mb-n1 font-12 color-highlight font-700 text-uppercase">Important Information at a glance...</h1>
             <p class="mb-3"> This page should show you important details, such as the next lesson, etc. </p>
           </div>
         </div>
-        
+        </div>
       </section>
   
-      <section id="schedule">
+      <section id="schedule" visible=false>
+        <div class="page-content header-clear-medium">
+  
         <div class="card card-style py-3">
           <div class="content px-2 text-center">
             <h1 class="mb-n1 font-12 color-highlight font-700 text-uppercase">Schedule</h1>
@@ -139,8 +618,11 @@
             <p class="mb-3"> Stuff </p>
           </div>
         </div>
+        </div>
       </section>
-      <section id="finance">
+      <section id="finance" visible=false>
+        <div class="page-content header-clear-medium">
+  
         <div class="card card-style">
           <div class="content">
             <h6 class="font-700 mb-n1 color-highlight">Financial Information</h6>
@@ -148,16 +630,58 @@
             <p> This could show a summary of income and expenditure, etc. </p>
           </div>
         </div>
+        </div>
       </section>
 
-     
-    
-    </div>
-    <!-- End of Page Content-->
 
+    <section id="menu" visible=false>
+       <div class="page-content header-clear-medium">
+  
+<!--
+<span class="menu-divider mt-4">SETTINGS</span>
+<div class="menu-list">
+	<div class="card card-style rounded-m p-3 py-2 mb-0">
+		<a href="#" data-toggle-theme data-trigger-switch="switch-1">
+			<i class="gradient-dark shadow-bg shadow-bg-xs bi bi-moon-fill font-13"></i>
+			<span>Dark Mode</span>
+			<div class="form-switch ios-switch switch-green switch-s me-2">
+				<input type="checkbox" data-toggle-theme class="ios-input" id="switch-1">
+				<label class="custom-control-label" for="switch-1"></label>
+			</div>
+		</a>
+	</div>
+</div>
+-->
+
+<span class="menu-divider mt-4">ACTIONS</span>
+<div class="menu-list">
+	<div class="card card-style rounded-m p-3 py-2 mb-0">
+		<a class="syncCal">
+			<i class="gradient-dark shadow-bg shadow-bg-xs bi bi-calendar-check-fill font-13"></i>
+      <span >Syncronise Calendar</span>
+			
+		</a>
+<hr>
+    
+		<a class="Reset password">
+			<i class="gradient-dark shadow-bg shadow-bg-xs bi bi-unlock-fill font-13"></i>
+      <span >Reset password</span>
+			
+		</a>
+    <hr>
+		<a class="logout">
+			<i class="gradient-dark shadow-bg shadow-bg-xs bi bi-door-open-fill font-13"></i>
+      <span >Log out</span>
+			
+		</a>
+	</div>
+</div>
+       </div>
       
-    </div>
-  </section>
+
+    </section>
+    
+    
     <script src="firebase.js" type="module"></script>
-    <script src="script.js"></script>
+    <script src="script.js" ></script>
   </body>
