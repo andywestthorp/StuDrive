@@ -169,10 +169,10 @@ onSnapshot(pupilQuery, (snapshot) => {
 
     
       
-        let docLink = "displayPupilDetails(\'" + doc.data().active+"','"+ doc.data().addressLine1 + "','"+ doc.data().addressLine2 + "','"+ doc.data().city + "','"+ doc.data().county + "','"+ doc.data().dob + "','"+ doc.data().drivingLicenseNumber + "','"+ doc.data().email + "','"+ doc.data().foreName + "','"+ doc.data().postCode + "','"+ doc.data().surName + "','" + doc.data().telephone + "','" + doc.data().town + "\')";
+        let docLink = "displayPupilDetails(\'" + doc.data().status+"','"+ doc.data().address + "','"+ doc.data().dob + "','"+ doc.data().drivingLicenseNumber + "','"+ doc.data().email + "','"+ doc.data().foreName + "','" + doc.data().surName + "','" + doc.data().telephone + "\')";
 
       
-      //console.log(docLink);
+      console.log(docLink);
       
         let preText='<div onclick="'+docLink+'" class="d-flex px-2 pb-2 pt-2"><div><a  ><img src="Avatar-200.png" width="45" class="rounded-s" alt="img"></a></div><div class="ps-2 align-self-center"><h5 class="ps-1 mb-0 line-height-xs pt-1">';
 

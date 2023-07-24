@@ -65,7 +65,7 @@
     <div id="footer-bar" class="footer-bar footer-bar-detached">
       <a id="pupilsMenu" onclick="showPupils()">
         <i class="bi bi-people font-16"></i>
-        <span>Pupils 2</span>
+        <span>Pupils</span>
       </a>
       <a id="scheduleMenu" onclick="showSchedule()">
          <i class="bi bi-calendar-week font-16"></i>
@@ -91,11 +91,7 @@
    <div class="header-bar header-fixed header-app header-bar-detached">
       <a class="header-title color-theme font-13">
         <img src="icons/icon-48x48.png"> Pupil Management 
-        <form class="find">
-      <label for="id">Find a pupil:</label>
-      <input type="text" name="findPupilName" id="findPupilName" required>
-      <button id="findPupilButton">Find</button>
-    </form>
+     
       </a>
       <a onclick="switchDarkMode()" class="show-on-theme-light" data-toggle-theme>
         <i class="bi bi-moon-fill font-13"></i>
@@ -104,11 +100,7 @@
         <i class="bi bi-lightbulb-fill color-yellow-dark font-13"></i>
       </a>
 
-     <div id="displayPupilForename">
-     </div>
-     <div id="displayPupilSurname">
-     </div>
-     
+  
     </div>
 <div class="page-content header-clear-medium">
   
@@ -145,6 +137,9 @@
 <div class="d-flex px-2 pb-2 pt-2">
   <div>
     <a  ><img src="Avatar-200.png" width="45" class="rounded-s" alt="img"></a>
+    <br><br><br>
+    <h1>&NonBreakingSpace;<i class="bi bi-geo-alt-fill"></i></h1>
+    
   </div>
   <div class="ps-2 align-self-center">
     <h2 class="ps-1 mb-0 line-height-xs pt-1">
@@ -160,24 +155,11 @@
       Surname
     </div>  
 <hr>
+     
+      
     </h2><h5>
-       <div id="pupilFormAddr1">
-      Address Line 1
-    </div>  
-       <div id="pupilFormAddr2">
-      Address Line 2
-    </div>      
-       <div id="pupilFormTown">
-      Town
-    </div>      
-       <div id="pupilFormCity">
-      City
-    </div>  
-        <div id="pupilFormCounty">
-      County
-    </div>     
-       <div id="pupilFormPostcode">
-      Post Code
+       <div id="pupilFormAddress">
+      
     </div>  
     <hr>
       <div id="pupilFormTelephone">
@@ -186,11 +168,12 @@
        <div id="pupilFormEmail">
       email
     </div>  
+       <hr>
       <div id="pupilFormDOB">
       DOB
     </div>  
 
- <hr>
+
        <div id="pupilFormLicense">
       License 
     </div>  
@@ -548,6 +531,103 @@ Lesson History<hr>
 </div>
 </div>
 </div>
+</section>
+
+    
+<section id="pupilDataCollectionForm" visible=false>
+ <div class="header-bar header-fixed header-app header-bar-detached">
+      <a class="header-title color-theme font-13">
+       
+        <div id="learnerHeading">
+           <img src="icons/icon-48x48.png">
+  Add new pupils      
+        </div>
+      </a>
+      <a onclick="switchDarkMode()" class="show-on-theme-light" data-toggle-theme>
+        <i class="bi bi-moon-fill font-13"></i>
+      </a>
+      <a onclick="switchLightMode()" class="show-on-theme-dark" data-toggle-theme>
+        <i class="bi bi-lightbulb-fill color-yellow-dark font-13"></i>
+      </a>
+ </div>
+
+  <!--- Blank page needed...-->
+  <div class="page-content header-clear-medium">
+    
+    <div class="card card-style py-3">
+      <div class="content px-2 text-center">
+        <div class="card-center">
+          <div class="card card-style">
+            <div class="content">
+						<h1 class="text-center font-800 font-30 mb-2">Add Pupil Details</h1>
+						<p class="text-center font-13 mt-n2 mb-3">Create a new pupil</p>
+						
+            <div class="form-custom form-label form-icon mb-3">
+							<i class="bi bi-person-circle font-14"></i>
+							<input type="text" class="form-control rounded-xs" id="foreName" placeholder="First name"/>
+							<label for="lblForename" class="color-theme">Forename:</label>
+							<span>(required)</span>
+						</div>
+            <div class="form-custom form-label form-icon mb-3">
+							<i class="bi bi-person-circle font-14"></i>
+							<input type="text" class="form-control rounded-xs" id="surName" placeholder="Surname"/>
+							<label for="lblSurname" class="color-theme">Surname:</label>
+							<span>(required)</span>
+						</div>
+            <div class="form-custom form-label form-icon mb-3">
+							<i class="bi bi-geo-alt-fill font-14"></i>
+							<label for="lblAddress" class="color-theme">Address:</label>
+							<span>(required)</span>
+              <textarea class="form-control rounded-xs" id="address" placeholder="Home address"/>
+							</textarea>
+						</div>
+						<div class="form-custom form-label form-icon mb-3">
+							<i class="bi bi-at font-16"></i>
+							<input type="text" class="form-control rounded-xs" id="c1a" placeholder="Email address"/>
+							<label for="c1a" class="color-theme">Email Address</label>
+							<span>(required)</span>
+						</div>
+            <div class="form-custom form-label form-icon mb-3">
+							<i class="bi bi-telephone-fill font-12"></i>
+							<input type="text" class="form-control rounded-xs" id="c2" placeholder="Telephone number"/>
+							<label for="c2" class="color-theme">Telephone No:</label>
+							<span>(required)</span>
+						</div>
+            <div class="form-custom form-label form-icon mb-3">
+							<i class="bi bi-patch-check" font-12"></i>
+							<input type="text" class="form-control rounded-xs" id="c2" placeholder="Driving license number"/>
+							<label for="c2" class="color-theme">Driving license:</label>
+							<span>(required)</span>
+						</div>
+             <div class="form-custom form-label form-icon mb-3">
+							<i class="bi bi-telephone-fill font-12"></i>
+							<input type="date" class="form-control rounded-xs" id="c2" placeholder="Date of birth"/>
+							<label for="c2" class="color-theme">Date of birth</label>
+							
+						</div>
+             <div class="form-custom form-label form-icon mb-3">
+							<i class="bi bi-calendar3 font-12"></i>
+               <select name="status" id="status" class="form-control rounded-xs">
+  <option value="learner">Learner</option>
+  <option value="advanced">Advanced</option>
+  <option value="prospective">Prospective</option>
+
+</select>
+							<label for="c2" class="color-theme">Status</label>
+						
+						</div>
+						<a href="#" class='btn rounded-sm btn-m gradient-blue text-uppercase font-700 mt-4 mb-3 btn-full shadow-bg shadow-bg-s'>Create Pupil Account</a>
+					
+								
+							</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+    
+  
 </section>
   <!--
 <div class="bg-theme mx-3 rounded-m shadow-m mt-3 mb-3">
