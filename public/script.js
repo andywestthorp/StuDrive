@@ -36,8 +36,7 @@ function showPupils() {
   document.getElementById('pupilDataCollectionForm').hidden = true;
   document.getElementById('finance').hidden = true;
   document.getElementById('menu').hidden = true;
-
-   document.getElementById('pupilForm').hidden = true;
+  document.getElementById('pupilForm').hidden = true;
 
   // Reflect in footer menu
   document.getElementById('pupilsMenu').classList.add('active-nav');
@@ -55,10 +54,10 @@ function showSchedule() {
   document.getElementById('schedule').hidden = true;
   document.getElementById('home').hidden = true;
   document.getElementById('finance').hidden = true;
-    document.getElementById('menu').hidden = true;
+  document.getElementById('menu').hidden = true;
   
-   document.getElementById('pupilForm').hidden = true;
- document.getElementById('pupilDataCollectionForm').hidden = false;
+  document.getElementById('pupilForm').hidden = true;
+  document.getElementById('pupilDataCollectionForm').hidden = false;
   
  
 
@@ -81,9 +80,8 @@ function showSplash() {
   document.getElementById('home').hidden = true;
   document.getElementById('finance').hidden = true;
   document.getElementById('menu').hidden = true;
-  
   document.getElementById('pupilDataCollectionForm').hidden = true;
-   document.getElementById('pupilForm').hidden = true;
+  document.getElementById('pupilForm').hidden = true;
   
 
   document.getElementById('splashPage').hidden = false;
@@ -102,10 +100,10 @@ function showHome() {
   document.getElementById('schedule').hidden = true;
   document.getElementById('home').hidden = false;
   document.getElementById('finance').hidden = true;
-    document.getElementById('menu').hidden = true;
-   document.getElementById('pupilForm').hidden = true;
+  document.getElementById('menu').hidden = true;
+  document.getElementById('pupilForm').hidden = true;
 
-   document.getElementById('pupilDataCollectionForm').hidden = true;
+  document.getElementById('pupilDataCollectionForm').hidden = true;
 
  
   // Reflect in footer menu
