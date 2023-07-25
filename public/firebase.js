@@ -206,9 +206,9 @@ onSnapshot(pupilQuery, (snapshot) => {
 
 });
 
-/*
+
  // adding pupils
-const addPupilForm = document.querySelector('.add')
+const addPupilForm = document.querySelector('.pupilDetailsForm')
 addPupilForm.addEventListener('submit', (e) => {
   e.preventDefault() // Prevent refresh of HTML page
 
