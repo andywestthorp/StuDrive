@@ -210,7 +210,16 @@ function displayPupilDetails(status,address,dob,license,email,foreName,surName,t
   }
    if (status !=undefined){
       console.log(status);
-    document.getElementById('pupilFormStatus').innerHTML = "Status: "+active;
+    document.getElementById('pupilFormStatus').innerHTML = "Status: "+ status;
   }
   
 }
+
+function resetFeedDisplay()
+{
+
+  alert("Resetting feed");
+
+
+}
+  
