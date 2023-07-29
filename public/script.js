@@ -186,7 +186,10 @@ function displayPupilDetails(status,address,dob,license,email,foreName,surName,t
          console.log(address);
   
    if (address !=undefined){
-    document.getElementById('pupilFormAddress').innerHTML = '<a href="https://maps.google.com/maps?'+address+'&hl=en_GB&authuser=0" target="_blank" >'+address+'</a>';
+
+     // https://maps.google.com/maps?q=Fortune%20Court%2C%204%2C%20Barking%2C%20Essex%20IG110XZ%2C%20UK&hl=en_GB&authuser=0
+     
+    document.getElementById('pupilFormAddress').innerHTML = '<a https://maps.google.com/maps q='+address+'&hl=en_GB&authuser=0" target="_blank">'+address+'</a>';
 
 
      console.log(address);
@@ -210,16 +213,7 @@ function displayPupilDetails(status,address,dob,license,email,foreName,surName,t
   }
    if (status !=undefined){
       console.log(status);
-    document.getElementById('pupilFormStatus').innerHTML = "Status: "+ status;
+    document.getElementById('pupilFormStatus').innerHTML = "Status: "+active;
   }
   
 }
-
-function resetFeedDisplay()
-{
-
-  alert("Resetting feed");
-
-
-}
-  

@@ -156,15 +156,13 @@ let pupilsList = [];
 
 onSnapshot(pupilQuery, (snapshot) => {
 
+  let feedList = document.getElementById("feeds");
+feedList.replaceChildren();
 
   snapshot.docs.forEach((doc) => {
-
-/*    pupilsList.push({...doc.data(),
+      pupilsList.push({...doc.data(),
           id: doc.id
       });
-*/
-
-
 
       let feed = document.createElement("div");
       feed.setAttribute("class", "bg-theme mx-3 rounded-m shadow-m mt-3 mb-3");
@@ -230,14 +228,6 @@ addDoc(pupilsCol,{
 .then(() => {
   addPupilForm.reset()
    alert("Pupil's details have been added")
-   //Clear the feed display
-
-
-let feedList = document.getElementById("feeds");
-feedList.replaceChildren();
-//feedList.innerHTML="";
-
-
 })
 
 })
