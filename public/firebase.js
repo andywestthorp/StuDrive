@@ -168,17 +168,26 @@ feedList.replaceChildren();
       feed.setAttribute("class", "bg-theme mx-3 rounded-m shadow-m mt-3 mb-3");
       feed.setAttribute("id", doc.id);
 
-    /
+    // This seems wrong! - why can't we pass an object?- doc.data()
+
+  
     
-      let docLink = "displayPupilDetails(\'" + doc.data().status+"','"+ doc.data().address + "','"+ doc.data().dob + "','"+ doc.data().drivingLicenseNumber + "','"+ doc.data().email + "','"+ doc.data().foreName + "','" + doc.data().surName + "','" + doc.data().telephone + "\')";
+      let docLink = "displayPupilDetails(\'" + doc.data().status+"','"+ doc.data().address + "','"+ doc.data().dob + "','"+ doc.data().drivingLicenseNumber + "','"+ doc.data().email + "','"+ doc.data().foreName + "','" + doc.data().surName + "','" + doc.data().telephone + "','" +"\')";
 
     
     console.log(docLink);
     
-      let preText='<div onclick="'+docLink+'" class="d-flex px-2 pb-2 pt-2"><div><a  ><img src="Avatar-200.png" width="45" class="rounded-s" alt="img"></a></div><div class="ps-2 align-self-center"><h5 class="ps-1 mb-0 line-height-xs pt-1">';
+    let deleteDoc = "deletePupilDetails(\'" + doc.id +"\')";
 
-      let postText = '</div><div class="ms-auto"><a data-bs-toggle="dropdown" class="icon icon-m ps-3"><i class="bi bi-three-dots-vertical font-18 color-theme"></i></a></div>';
+    
+      let preText='<div onclick="'+docLink+'" class="d-flex px-2 pb-2 pt-2"><div><a ><img src="Avatar-200.png" width="45" class="rounded-s" alt="img"></a></div><div class="ps-2 align-self-center"><h5 class="ps-1 mb-0 line-height-xs pt-1">';
 
+      let postText = '</div><div onclick "'+deleteDoc+'" class="ms-auto"><a data-bs-toggle="dropdown" class="icon icon-m ps-3"><h1><i id="'+doc.id+'" class="bi bi-person-x font-18 color-theme"></i></h1></a></div>';
+    /*
+    document.querySelector(doc.id).addEventListener('submit', (e) => {
+  alert("Delete the person?");
+});
+      */                           
       let phone = '<h6 class="ps-1 mb-0 line-height-xs pt-1">' + doc.data().telephone + '</h6>';
       feed.innerHTML = preText + doc.data().foreName + "<br>" + doc.data().surName + phone + postText;
 
@@ -230,31 +239,35 @@ addDoc(pupilsCol,{
 
 })
 
+/*
+// Editing pupils
+// This should display a filled in Add pupils form ready for editing
+const displayFilledPupilForm = document.querySelector('.callEditPupilDetails')
+displayFilledPupilForm.addEventListener('click', (e) => {
 
-// editing pupils
-const editPupilForm = document.querySelector('.callEditPupilDetails')
-editPupilForm.addEventListener('submit', (e) => {
-
-  alert("Edit details");
-  // Display Editpage
-  document.getElementById('pupilDataCollectionForm').hidden = false;
+  alert("Display the form");
+  
+});
+*/
 
 
-})
-
+  
 /*
 // deleting a pupil record
-const deletePupilForm = document.querySelector('.delete')
+const deletePupilForm = document.querySelector('.pupilFormDelete')
 deletePupilForm.addEventListener('submit', (e) => {
-e.preventDefault() // Prevent refresh of HTML page
-const docRef = doc(db, "pupils", deletePupilForm.id.value);
-deleteDoc(docRef)
-.then(() => {
-  deletePupilForm.reset()
-  alert("Pupil's details have been removed")
+  alert("Delete the person?");
+  
+//e.preventDefault() // Prevent refresh of HTML page
+//const docRef = doc(db, "pupils", deletePupilForm.id.value);
+//deleteDoc(docRef)
+//.then(() => {
+//  deletePupilForm.reset()
+//  alert("Pupil's details have been removed")
 })
   
-})
+
+
 
 // get a single document
 const docRef = doc(db, 'pupils', '7q96KwNCrsb4NTXgXTxq')

@@ -120,7 +120,6 @@
            <img src="icons/icon-48x48.png">
   Lucy Westthorp      
         </div>
-        2
       </a>
       <a onclick="switchDarkMode()" class="show-on-theme-light" data-toggle-theme>
         <i class="bi bi-moon-fill font-13"></i>
@@ -136,11 +135,16 @@
 <div class="bg-theme mx-3 rounded-m shadow-m mt-3 mb-3">
 
 <div class="d-flex px-2 pb-2 pt-2">
-  <div onclick="" id="callEditPupilDetails" >
+  <div  >
     <a  ><img src="Avatar-200.png" width="45" class="rounded-s" alt="img"></a>
     <br><br><br>
-    <h1>&NonBreakingSpace;<i class="bi bi-geo-alt-fill"></i></h1>
-    
+    < div class="callEditPupilDetails">
+    <h1>&NonBreakingSpace;<i onclick="showEdit()"  class="bi bi-pencil-square"></i>
+      <br><br>
+    </div>
+      <br><br><br>
+     <br>&NonBreakingSpace;<i onclick="deletePupilDetails" id="deletePupilDetails" class="bi bi-person-x"></i>
+      </h1>
   </div>
   <div class="ps-2 align-self-center">
     <h2 class="ps-1 mb-0 line-height-xs pt-1">
@@ -181,18 +185,13 @@
     <div id="pupilFormStatus">
       Learner Driver
     </div> 
+    </h5>
     
-    
-    
-    </h3>
 
- <hr>
-<h3>
-         
-
-    <i class="bi bi-trash3"></i>
-    Remove person from system
-    </h3>  
+     
+    
+  
+   
 
     
     </div>
@@ -554,6 +553,19 @@ Lesson History<hr>
 </div>
 </section>
 
+
+<section id="deletePupilConfirm" visible=false>
+  <div class="ps-2 align-self-center">
+    <h2 class="ps-1 mb-0 line-height-xs pt-1">
+
+     Are you sure that you want to remove:
+      <div id="pupilFormName">
+      First name
+    </div> 
+      from the system?
+      <br>
+    </h2>  
+</section>
     
 <section id="pupilDataCollectionForm" visible=false>
  <div class="header-bar header-fixed header-app header-bar-detached">
@@ -639,16 +651,22 @@ Lesson History<hr>
               </select>
 							<label for="driverstatus" class="color-theme">Status</label>
 						</div>
-          
-						<button type="submit" class='btn rounded-sm btn-m gradient-blue text-uppercase font-700 mt-4 mb-3 btn-full shadow-bg shadow-bg-s'>Create Pupil Account</button>
-          
+
+						<button type="submit" id="btnAddEditPupil" class='btn rounded-sm btn-m gradient-blue text-uppercase font-700 mt-4 mb-3 btn-full shadow-bg shadow-bg-s'>Save details</button>
+             
+              </button>
         		<br>		
             </form>
   
 							</div>
           </div>
 </section>
-  <!--
+  
+    
+    
+    
+    
+    <!--
     <form class="delete">
       <label for="id">Document id:</label>
       <input type="text" name="id" required>
