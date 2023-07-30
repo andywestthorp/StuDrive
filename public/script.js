@@ -48,10 +48,17 @@ function showPupils() {
   }
 
 
+function showEditPupilDetails()
+{
+  
+  document.getElementById('pupilDataCollectionForm').hidden = false;
+
+}
+
 function showSchedule() {
   // Display appropriate card
   document.getElementById('pupils').hidden = true;
-  document.getElementById('schedule').hidden = true;
+  document.getElementById('schedule').hidden = false;
   document.getElementById('home').hidden = true;
   document.getElementById('finance').hidden = true;
   document.getElementById('menu').hidden = true;

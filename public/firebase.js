@@ -168,9 +168,7 @@ feedList.replaceChildren();
       feed.setAttribute("class", "bg-theme mx-3 rounded-m shadow-m mt-3 mb-3");
       feed.setAttribute("id", doc.id);
 
-    // This seems wrong! - why can't we pass an object?- doc.data()
-
-  
+    /
     
       let docLink = "displayPupilDetails(\'" + doc.data().status+"','"+ doc.data().address + "','"+ doc.data().dob + "','"+ doc.data().drivingLicenseNumber + "','"+ doc.data().email + "','"+ doc.data().foreName + "','" + doc.data().surName + "','" + doc.data().telephone + "\')";
 
@@ -229,6 +227,18 @@ addDoc(pupilsCol,{
   addPupilForm.reset()
    alert("Pupil's details have been added")
 })
+
+})
+
+
+// editing pupils
+const editPupilForm = document.querySelector('.callEditPupilDetails')
+editPupilForm.addEventListener('submit', (e) => {
+
+  alert("Edit details");
+  // Display Editpage
+  document.getElementById('pupilDataCollectionForm').hidden = false;
+
 
 })
 
